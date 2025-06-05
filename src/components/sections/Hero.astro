@@ -1,0 +1,30 @@
+---
+import Button from '../ui/Button.astro';
+---
+
+<section class="relative bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-20 md:py-32 overflow-hidden">
+  <div class="absolute inset-0 z-0 opacity-10">
+    <img src="/assets/images/hero-background.jpg" alt="Background pattern" class="w-full h-full object-cover">
+  </div>
+  <div class="container mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+    <div class="md:w-1/2 text-center md:text-left">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+        Conectar generaciones y garantizar el envejecimiento digno.
+      </h1>
+      <p class="text-lg md:text-xl mb-8 opacity-90">
+        Luuí es una plataforma digital + IoT que transforma el cuidado de adultos mayores en Latinoamérica, empezando por Ecuador. Conectamos familias con cuidadores certificados y ofrecemos monitoreo inteligente para garantizar un envejecimiento digno, seguro y acompañado. 
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+        <Button href="/service" style="primary" size="large">Descubre nuestros servicios</Button>
+        <Button href="/contact" style="outline" size="large">Contáctanos</Button>
+      </div>
+    </div>
+    <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+      <img src="/assets/images/hero-image.jpg" alt="Adulto mayor recibiendo cuidado" class="max-w-xs md:max-w-md lg:max-w-lg rounded-lg shadow-xl" />
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Estilos específicos si es necesario, aunque la mayoría se maneja con Tailwind */
+</style>

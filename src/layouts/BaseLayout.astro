@@ -1,0 +1,44 @@
+---
+
+import Header from '../components/common/Header.astro';
+import Footer from '../components/common/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{title} | LUUÍ</title>
+</head>
+<body class="flex flex-col min-h-screen">
+  <Header />
+  <main class="flex-grow">
+    <slot />
+  </main>
+  <Footer />
+</body>
+</html>
+
+<style is:global>
+  /* Importa tus estilos globales aquí */
+  @import '../styles/global.css';
+
+  /* Puedes añadir estilos específicos al layout o body si es necesario */
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Inter', sans-serif; /* Puedes reemplazar 'Inter' con tu fuente preferida si tienes una */
+  }
+</style>

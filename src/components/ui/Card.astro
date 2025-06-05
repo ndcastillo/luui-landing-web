@@ -1,0 +1,15 @@
+---
+interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<div class={`bg-white rounded-lg shadow-md p-6 ${className || ''}`}>
+  <slot />
+</div>
+
+<style is:global>
+  /* Aquí puedes añadir estilos globales si es necesario para las tarjetas */
+</style>

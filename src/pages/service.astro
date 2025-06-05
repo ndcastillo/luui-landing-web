@@ -1,0 +1,114 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/ui/Card.astro';
+import Button from '../components/ui/Button.astro';
+
+const pageTitle = "Nuestros Servicios | LUUÍ";
+const pageDescription = "Descubre la gama completa de servicios de LUUI: cuidadores certificados, monitoreo IoT, marketplace de salud y pagos colaborativos para el cuidado de adultos mayores.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <section class="py-20 md:py-28 bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-center">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Nuestros Servicios Integrales</h1>
+      <p class="text-lg md:text-xl opacity-90 max-w-3xl mx-auto">
+        En Luuí, ofrecemos una solución completa y personalizada para el cuidado de adultos mayores, combinando tecnología y el toque humano.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">Cómo Te Ayudamos</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="order-2 lg:order-1">
+          <h3 class="text-2xl md:text-3xl font-semibold text-blue-600 mb-4">Cuidadores Profesionales y Confiables</h3>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Con Luuí, puedes solicitar cuidadores por horas o internos, totalmente certificados y con seguimiento de tratamientos[cite: 10]. Garantizamos un cuidado profesional y personalizado para tus seres queridos.
+          </p>
+          <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
+            <li>Acceso a cuidadores certificados y verificables [cite: 8]</li>
+            <li>Solicitudes flexibles por horas o estadías internas [cite: 10]</li>
+            <li>Monitoreo y seguimiento de planes de tratamiento [cite: 10]</li>
+            <li>Reportes detallados para la familia [cite: 13]</li>
+          </ul>
+          <Button href="/contact" style="primary">Solicitar un cuidador</Button>
+        </div>
+        <div class="order-1 lg:order-2 flex justify-center">
+          <img src="/assets/images/service-caregiver.jpg" alt="Cuidador con adulto mayor" class="rounded-lg shadow-xl max-w-md w-full" />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-16 md:mt-24">
+        <div class="order-1">
+          <img src="/assets/images/service-iot.jpg" alt="Dispositivos IoT" class="rounded-lg shadow-xl max-w-md w-full" />
+        </div>
+        <div class="order-2">
+          <h3 class="text-2xl md:text-3xl font-semibold text-green-600 mb-4">Tecnología IoT para una Seguridad Inigualable</h3>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Nuestros dispositivos conectados (wearables, sensores en casa, pulseras GPS) ofrecen monitoreo de signos vitales y detección automática de caídas[cite: 12]. Además, integramos historias clínicas y trazabilidad automatizada para tener toda la información al alcance de tu mano[cite: 12].
+          </p>
+          <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
+            <li>Detección automática de caídas [cite: 12]</li>
+            <li>Monitoreo de signos vitales en tiempo real [cite: 12]</li>
+            <li>Pulseras GPS para mayor tranquilidad [cite: 12]</li>
+            <li>Historias clínicas digitales y trazabilidad [cite: 12]</li>
+          </ul>
+          <Button href="/contact" style="primary">Conoce nuestros dispositivos</Button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-16 md:mt-24">
+        <div class="order-2 lg:order-1">
+          <h3 class="text-2xl md:text-3xl font-semibold text-purple-600 mb-4">Marketplace de Salud y Gestión de Pagos</h3>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Agenda servicios como consultas, terapias, transporte e insumos médicos directamente desde nuestra plataforma[cite: 11]. Además, facilitamos pagos colaborativos tipo "crowdfunding familiar"[cite: 11], permitiendo a múltiples familiares contribuir al costo del cuidado de manera transparente y organizada.
+          </p>
+          <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
+            <li>Agendamiento de consultas y terapias [cite: 11]</li>
+            <li>Acceso a insumos y medicamentos [cite: 15]</li>
+            <li>Transporte especializado [cite: 9]</li>
+            <li>Pagos fáciles, revisión de historial y evaluaciones [cite: 11]</li>
+            <li>Pagos colaborativos "crowdfunding familiar" [cite: 11]</li>
+          </ul>
+          <Button href="/contact" style="primary">Explorar Marketplace</Button>
+        </div>
+        <div class="order-1 lg:order-2 flex justify-center">
+          <img src="/assets/images/service-marketplace.jpg" alt="Familia colaborando en pagos" class="rounded-lg shadow-xl max-w-md w-full" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-100 text-center">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Beneficios Clave para Todos</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <Card className="text-left">
+          <h4 class="text-xl font-semibold text-gray-700 mb-3">Para el Adulto Mayor</h4>
+          <ul class="list-disc list-inside text-gray-600 space-y-1">
+            <li>Atención profesional y personalizada [cite: 13]</li>
+            <li>Reducción de accidentes y hospitalizaciones [cite: 13]</li>
+            <li>Mejora en calidad de vida y compañía [cite: 13]</li>
+          </ul>
+        </Card>
+        <Card className="text-left">
+          <h4 class="text-xl font-semibold text-gray-700 mb-3">Para los Familiares</h4>
+          <ul class="list-disc list-inside text-gray-600 space-y-1">
+            <li>Control total desde la app [cite: 13]</li>
+            <li>Alertas de salud y seguridad [cite: 13]</li>
+            <li>Pagos fáciles y compartidos [cite: 13]</li>
+          </ul>
+        </Card>
+        <Card className="text-left">
+          <h4 class="text-xl font-semibold text-gray-700 mb-3">Para los Cuidadores</h4>
+          <ul class="list-disc list-inside text-gray-600 space-y-1">
+            <li>Formalización y trazabilidad laboral [cite: 13]</li>
+            <li>Capacitación y visibilidad [cite: 13]</li>
+            <li>Agenda optimizada y segura [cite: 13]</li>
+          </ul>
+        </Card>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

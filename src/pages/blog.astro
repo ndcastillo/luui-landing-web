@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/ui/Card.astro';
+import Button from '../components/ui/Button.astro';
+
+// Importa la función `getCollection` para obtener las publicaciones del blog
+import { getCollection } from 'astro:content';
+
+const pageTitle = "Blog de LUUÍ: Noticias y Artículos sobre Cuidado de Adultos Mayores";
+const pageDescription = "Mantente informado con los últimos artículos y noticias de LUUÍ sobre el envejecimiento digno, tecnología IoT, cuidado de adultos mayores y más.";
+
+// Obtiene todas las publicaciones de la colección 'blog'
+const allBlogPosts = await getCollection('blog');
+
+// Opcional: Ordena las publicaciones por fecha (las más recientes primero)
+allBlogPosts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <section class="py-20 md:py-28 bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-center">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Nuestro Blog</h1>
+      <p class="text-lg md:text-xl opacity-90 max-w-3xl mx-auto">
+        Explora artículos, noticias y consejos sobre el cuidado de adultos mayores, tecnología y bienestar.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {allBlogPosts.map(post => (
+          <Card className="flex flex-col h-full">
+            {post.data.image && (
+              <img src={post.data.image} alt={post.data.title} class="w-full h-48 object-cover rounded-t-lg mb-6" />
+            )}
+            <h2 class="text-xl font-bold text-gray-800 mb-2 leading-tight">
+              {post.data.title}
+            </h2>
+            <p class="text-sm text-gray-500 mb-4">
+              Por {post.data.author} | {post.data.pubDate.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </p>
+            <p class="text-gray-600 text-sm flex-grow mb-6">
+              {post.data.description}
+            </p>
+            <div class="mt-auto"> {/* Esto empujará el botón al final de la tarjeta */}
+              <Button href={`/blog/${post.slug}`} style="outline" size="small">
+                Leer más
+              </Button>
+            </div>
+          </Card>
+        ))}
+        {allBlogPosts.length === 0 && (
+          <div class="col-span-full text-center text-gray-600 text-lg">
+            Aún no hay publicaciones en el blog. ¡Vuelve pronto!
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-blue-100 text-center">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold text-blue-800 mb-4">Suscríbete a nuestro newsletter</h2>
+      <p class="text-blue-700 mb-6">Recibe las últimas noticias y consejos directamente en tu bandeja de entrada.</p>
+      <form class="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-lg mx-auto">
+        <input
+          type="email"
+          placeholder="Tu correo electrónico"
+          aria-label="Tu correo electrónico para suscribirte"
+          class="w-full sm:w-2/3 px-5 py-3 rounded-md border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+          required
+        />
+        <Button  style="primary">Suscribirse</Button>
+      </form>
+    </div>
+  </section>
+</BaseLayout>

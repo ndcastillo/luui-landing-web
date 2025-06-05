@@ -1,0 +1,75 @@
+---
+import Card from '../ui/Card.astro';
+---
+
+<section class="py-16 md:py-24 bg-white">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-12">Sobre LUUÍ y Nuestro Propósito</h2>
+
+    <div class="max-w-4xl mx-auto mb-16">
+      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+        Nuestra misión es conectar generaciones y garantizar el envejecimiento digno[cite: 1, 26]. Luuí nace de la necesidad de transformar el cuidado de adultos mayores en Latinoamérica, comenzando por Ecuador. [cite: 28]
+      </p>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        Comprendemos los desafíos que enfrentan las familias y los adultos mayores: el envejecimiento acelerado, la soledad, el maltrato y la fragmentación de servicios. [cite: 5, 6, 9] Es por eso que hemos diseñado una plataforma integral que ofrece soluciones reales y con impacto.
+      </p>
+    </div>
+
+    <h3 class="text-2xl font-bold text-gray-800 mb-8">El Problema que Resolvemos</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      <Card className="flex flex-col items-center text-center">
+        <p class="text-5xl font-bold text-blue-600 mb-4">44%</p>
+        <p class="text-gray-600">de adultos mayores en Ecuador ha sido víctima de violencia o abandono. [cite: 6]</p>
+      </Card>
+      <Card className="flex flex-col items-center text-center">
+        <p class="text-5xl font-bold text-green-600 mb-4">18%</p>
+        <p class="text-gray-600">de adultos mayores en Ecuador viven solos, aumentando el riesgo de aislamiento. [cite: 6]</p>
+      </Card>
+      <Card className="flex flex-col items-center text-center">
+        <p class="text-5xl font-bold text-purple-600 mb-4">28%</p>
+        <p class="text-gray-600">sufren caídas anualmente en Ecuador, con consecuencias graves. [cite: 6]</p>
+      </Card>
+      <Card className="flex flex-col items-center text-center">
+        <p class="text-5xl font-bold text-red-600 mb-4">12%</p>
+        <p class="text-gray-600">de cuidadores informales en Ecuador tienen certificación verificable. [cite: 7]</p>
+      </Card>
+      <Card className="flex flex-col items-center text-center">
+        <p class="text-5xl font-bold text-yellow-600 mb-4">1.5M+</p>
+        <p class="text-gray-600">de personas mayores de 65 años en Ecuador, creciendo a 3.3M para 2050. [cite: 5, 30, 31]</p>
+      </Card>
+      <Card className="flex flex-col items-center text-center">
+        <p class="text-5xl font-bold text-gray-600 mb-4">Fragmentación</p>
+        <p class="text-gray-600">en el ecosistema de servicios geriátricos y falta de trazabilidad digital. [cite: 9]</p>
+      </Card>
+    </div>
+
+    <h3 class="text-2xl font-bold text-gray-800 mb-8">Nuestro Impacto</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <Card className="text-left">
+        <h4 class="text-xl font-semibold text-gray-700 mb-3">Para el Adulto Mayor</h4>
+        <ul class="list-disc list-inside text-gray-600 space-y-1">
+          <li>Atención profesional y personalizada [cite: 13]</li>
+          <li>Reducción de accidentes y hospitalizaciones [cite: 13, 36]</li>
+          <li>Mejora en calidad de vida y compañía [cite: 13, 35]</li>
+        </ul>
+      </Card>
+      <Card className="text-left">
+        <h4 class="text-xl font-semibold text-gray-700 mb-3">Para los Familiares</h4>
+        <ul class="list-disc list-inside text-gray-600 space-y-1">
+          <li>Control total desde la app [cite: 13]</li>
+          <li>Alertas de salud y seguridad [cite: 13]</li>
+          <li>Pagos fáciles y compartidos [cite: 13]</li>
+          <li>Empoderamiento con datos, control y tranquilidad [cite: 37]</li>
+        </ul>
+      </Card>
+      <Card className="text-left">
+        <h4 class="text-xl font-semibold text-gray-700 mb-3">Para los Cuidadores</h4>
+        <ul class="list-disc list-inside text-gray-600 space-y-1">
+          <li>Formalización y trazabilidad laboral [cite: 13]</li>
+          <li>Capacitación y visibilidad [cite: 13, 36]</li>
+          <li>Agenda optimizada y segura [cite: 13]</li>
+        </ul>
+      </Card>
+    </div>
+  </div>
+</section>

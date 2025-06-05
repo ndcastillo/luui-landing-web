@@ -1,0 +1,5 @@
+/* src/styles/global.css */
+@import "tailwindcss";
+/* Importa tus fuentes de Google Fonts aquí */
+/* Ejemplo: Importando la fuente 'Inter' */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
