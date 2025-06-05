@@ -1,11 +1,24 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import Features from '../components/sections/Features.astro';
+import Testimonials from '../components/sections/Testimonials.astro';
+import Contact from '../components/sections/Contact.astro'; // Opcional: puedes poner un mini-contacto o solo CTA
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const pageTitle = "LUUÍ: Conectar generaciones y garantizar el envejecimiento digno";
+const pageDescription = "Luuí es una plataforma digital + IoT que transforma el cuidado de adultos mayores en Latinoamérica, empezando por Ecuador. Conectamos familias con cuidadores certificados y ofrecemos monitoreo inteligente para garantizar un envejecimiento digno, seguro y acompañado.";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <Hero />
+  <Features />
+  <Testimonials />
+  <section class="py-16 text-center bg-blue-600 text-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">¿Listo para transformar el cuidado de tus seres queridos?</h2>
+      <a href="/contact" class="inline-block bg-black text-blue-600 hover:bg-blue-100 px-8 py-3 rounded-full text-lg font-semibold transition duration-300">
+        Contáctanos ahora
+      </a>
+    </div>
+  </section>
+</BaseLayout>

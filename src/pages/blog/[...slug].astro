@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { CollectionEntry, getCollection } from 'astro:content';
+
+// 1. Usa getStaticPaths para generar las rutas para cada publicación
+export async function getStaticPaths() {
+  const blogPosts = await getCollection('blog');
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+// 2. Define las props que recibirá cada página individual
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render(); // Obtiene el componente de contenido Markdown
+---
+
+<BaseLayout title={post.data.title} description={post.data.description}>
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <header class="mb-10 text-center">
+        {post.data.image && (
+          <img src={post.data.image} alt={post.data.title} class="w-full max-h-96 object-cover rounded-lg mb-8 shadow-md" />
+        )}
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
+          {post.data.title}
+        </h1>
+        <p class="text-gray-600 text-lg mb-4">
+          Por <span class="font-semibold">{post.data.author}</span> el {post.data.pubDate.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </p>
+        {post.data.tags && (
+          <div class="flex flex-wrap justify-center gap-2 mb-6">
+            {post.data.tags.map(tag => (
+              <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </header>
+
+      <article class="prose prose-lg max-w-none prose-blue text-gray-700">
+        <Content /> {/* Aquí se renderiza el contenido Markdown del post */}
+      </article>
+
+      <div class="mt-12 text-center">
+        <!-- <Button href="/blog" style="outline">
+          ← Volver al blog
+        </Button> -->
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style is:global>
+  /* Puedes añadir estilos específicos para el "prose" (contenido Markdown) */
+  /* Los estilos de Tailwind CSS "prose" necesitan ser habilitados en tailwind.config.cjs si no lo están */
+  /* Revisa la documentación de @tailwindcss/typography */
+  .prose h1 {
+    font-size: 2.5rem; /* Ajusta tamaño de encabezados dentro del contenido Markdown */
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+  }
+  .prose h2 {
+    font-size: 2rem;
+    margin-top: 1.5em;
+    margin-bottom: 0.7em;
+  }
+  .prose p {
+    margin-bottom: 1em;
+  }
+  .prose ul, .prose ol {
+    margin-bottom: 1em;
+    padding-left: 1.5em;
+  }
+  .prose li {
+    margin-bottom: 0.5em;
+  }
+</style>

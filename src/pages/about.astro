@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AboutUs from '../components/sections/AboutUs.astro';
+import Card from '../components/ui/Card.astro'; // Para la sección del equipo
+
+const pageTitle = "Sobre Nosotros | LUUÍ";
+const pageDescription = "Conoce la historia, misión y el equipo detrás de LUUÍ, la plataforma que conecta generaciones y garantiza el envejecimiento digno en Latinoamérica.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <section class="py-20 md:py-28 bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-center">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">La Historia de LUUÍ</h1>
+      <p class="text-lg md:text-xl opacity-90 max-w-3xl mx-auto">
+        Una visión inspirada en experiencias personales para transformar el cuidado de adultos mayores.
+      </p>
+    </div>
+  </section>
+
+  <AboutUs />
+
+  <section class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-12">Nuestro Equipo</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <Card className="flex flex-col items-center text-center">
+          <img src="/assets/images/team-photos/kruger.jpg" alt="Kruger - CEO Founder" class="w-32 h-32 rounded-full object-cover mb-4 shadow-lg" />
+          <h3 class="text-xl font-semibold text-gray-800">Kruger</h3>
+          <p class="text-blue-600 font-medium mb-2">CEO - Founder [cite: 2]</p>
+          <p class="text-gray-600 text-sm">
+            Growth Manager en LUIDE, Director en Kruger Labs y Regional Growth Manager en TRD. Co-Director en startup grind. Especialista en marketing digital. [cite: 2]
+          </p>
+        </Card>
+        <Card className="flex flex-col items-center text-center">
+          <img src="/assets/images/team-photos/javier.jpg" alt="Javier - CTO Co-Founder" class="w-32 h-32 rounded-full object-cover mb-4 shadow-lg" />
+          <h3 class="text-xl font-semibold text-gray-800">Javier</h3>
+          <p class="text-blue-600 font-medium mb-2">Chief Technology Officer - Co-Founder [cite: 3]</p>
+          <p class="text-gray-600 text-sm">
+            CTO en MARCAS QUE IMPACTAN y Founder de Código Llamingo. [cite: 3]
+          </p>
+        </Card>
+      </div>
+      <p class="mt-12 text-gray-700 max-w-2xl mx-auto">
+        Con un equipo apasionado y con experiencia en tecnología, marketing y gestión, estamos comprometidos a hacer de Luuí el segundo unicornio ecuatoriano. [cite: 25]
+      </p>
+    </div>
+  </section>
+</BaseLayout>

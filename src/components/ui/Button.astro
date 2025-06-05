@@ -1,0 +1,40 @@
+---
+interface Props {
+  href?: string;
+  style?: 'primary' | 'secondary' | 'outline';
+  size?: 'small' | 'medium' | 'large';
+  ariaLabel?: string;
+}
+
+const { href, style = 'primary', size = 'medium', ariaLabel } = Astro.props;
+
+const baseClasses = 'inline-flex items-center justify-center font-medium rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2';
+
+const styleClasses = {
+  primary: 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500',
+  secondary: 'bg-gray-200 text-gray-800 hover:bg-gray-300 focus:ring-gray-400',
+  outline: 'border-2 border-blue-600 text-blue-600 hover:bg-blue-50 focus:ring-blue-500',
+};
+
+const sizeClasses = {
+  small: 'px-3 py-1.5 text-sm',
+  medium: 'px-4 py-2 text-base',
+  large: 'px-6 py-3 text-lg',
+};
+
+const classes = `${baseClasses} ${styleClasses[style]} ${sizeClasses[size]}`;
+---
+
+{href ? (
+  <a href={href} class={classes} aria-label={ariaLabel || 'Button'}>
+    <slot />
+  </a>
+) : (
+  <button class={classes} aria-label={ariaLabel || 'Button'}>
+    <slot />
+  </button>
+)}
+
+<style is:global>
+  /* Aquí puedes añadir estilos globales si es necesario para los botones */
+</style>

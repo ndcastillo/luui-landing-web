@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactSection from '../components/sections/Contact.astro';
+
+const pageTitle = "Contacto | LUUÍ";
+const pageDescription = "Ponte en contacto con LUUÍ para cualquier consulta, soporte o información sobre nuestros servicios de cuidado para adultos mayores.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <section class="py-20 md:py-28 bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-center">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Hablemos</h1>
+      <p class="text-lg md:text-xl opacity-90 max-w-3xl mx-auto">
+        Estamos aquí para responder a tus preguntas y ayudarte a encontrar la mejor solución para tus seres queridos.
+      </p>
+    </div>
+  </section>
+
+  <ContactSection />
+</BaseLayout>
