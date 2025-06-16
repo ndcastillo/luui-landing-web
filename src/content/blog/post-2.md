@@ -1,7 +1,7 @@
 ---
 title: 'IoT y Cuidado de Adultos Mayores: La Revolución Tecnológica de LUUÍ'
 pubDate: 2025-06-15
-author: 'Javier - CTO Co-Founder, LUUÍ'
+author: 'David Castillo - CTO Co-Founder, LUUÍ'
 image: '/assets/images/blog/blog-post-2.jpg'
 tags: ['IoT', 'Tecnología', 'Salud Digital', 'Innovación', 'Cuidado Asistido']
 description: 'Descubre cómo los dispositivos IoT de Luuí están transformando el cuidado de adultos mayores, ofreciendo monitoreo en tiempo real, detección de caídas y una mayor tranquilidad para las familias.'
