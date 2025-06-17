@@ -9,16 +9,19 @@ import Button from '../ui/Button.astro';
  
   <div class="container mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
      
-    <div class="md:w-1/2 text-center md:text-left">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-        Luuí: Cuidado con Tecnología y Amor para Adultos Mayores en LATAM
+    <div class="md:w-1/2 text-center md:text-left px-8" id="hero-section">
+
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6" style="color:#253d61; line-height: 1;" id="hero-title">
+        <span style="
+        font-weight: bold;
+        text-align: center;
+        background-clip: text;
+        color: transparent;
+        background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    ">Luuí<svg style="display:inline-block" xmlns="http://www.w3.org/2000/svg"  width="62"  height="62"  viewBox="0 0 24 24"  fill="#2575fc"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sparkles"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z" /></svg></span><br/>
+        Conectar generaciones y garantizar el envejecimiento digno
       </h1>
       
-      <p class="text-lg md:text-xl mb-6 opacity-90">
-        <b>
-          ¿Qué es Luuí?
-          </b>
-      </p>
       <p class="text-lg md:text-xl mb-8 opacity-90">
         Luuí es una plataforma digital + IoT que transforma el cuidado de adultos mayores en Latinoamérica, empezando por Ecuador.
       </p>
@@ -32,6 +35,7 @@ import Button from '../ui/Button.astro';
     </div>
   </div>
 </section>
+
 
 <style>
   /* Estilos específicos si es necesario, aunque la mayoría se maneja con Tailwind */
